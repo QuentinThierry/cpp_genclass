@@ -21,6 +21,10 @@ create_single_class()
 	EXEC_PATH=$(type -a genclass | cut -d" " -f3 | grep -i "^/" | sed -n '1p' | sed 's|\(.*\)/.*|\1|')
 	CLASS_NO_PATH=$(echo "$1" | rev | cut -d'/' -f1 | rev)
 	CLASS_PATH=$(echo "$1" | rev | cut -d'/' -f2- | rev)
+	if [ "$CLASS_PATH" == "$CLASS_NO_PATH" ]
+	then
+		CLASS_PATH="."
+	fi
 	CLASS_BASE_NAME=$(echo "$CLASS_NO_PATH" | sed 's/\(.*\)\.cpp$/\1/;s/\(.*\)\.hpp$/\1/')
 
 	if ! test -f ./$CLASS_BASE_NAME.cpp; then
