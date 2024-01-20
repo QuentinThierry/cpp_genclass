@@ -1,0 +1,41 @@
+#!/bin/bash
+
+create_base_template()
+{
+	EXEC_PATH=$(type -a genclass | cut -d" " -f3 | grep -i "^/" | sed -n '1p' | sed 's|\(.*\)/.*|\1|')
+	if ! test -f ./main.cpp; then
+		cat $EXEC_PATH/main_cpp_template > ./main.cpp
+	fi
+	echo "Base template created"
+}
+
+create_single_class()
+{
+	EXEC_PATH=$(type -a genclass | cut -d" " -f3 | grep -i "^/" | sed -n '1p' | sed 's|\(.*\)/.*|\1|')
+	CLASS_BASE_NAME=$(echo "$1" | sed 's/\(.*\)\.cpp$/\1/;s/\(.*\)\.hpp$/\1/')
+
+	if ! test -f ./$CLASS_BASE_NAME.cpp; then
+		cat $EXEC_PATH/class_cpp_template | sed "s/ClassName/$CLASS_BASE_NAME/g" | sed "s/Class/$CLASS_BASE_NAME/g" > ./$CLASS_BASE_NAME.cpp
+		echo "'$CLASS_BASE_NAME.cpp' created"
+	else
+		echo "'$CLASS_BASE_NAME.cpp' already exists"
+	fi
+
+	if ! test -f ./$CLASS_BASE_NAME.hpp; then
+		cat $EXEC_PATH/class_hpp_template | sed "s/ClassName/$CLASS_BASE_NAME/g" | sed "s/CLASSNAME/${CLASS_BASE_NAME^^}/g" > ./$CLASS_BASE_NAME.hpp
+		echo "'$CLASS_BASE_NAME.hpp' created"
+	else
+		echo "'$CLASS_BASE_NAME.hpp' already exists"
+	fi
+}
+
+
+if [ $# == 1 ]
+then
+	create_single_class "$1"
+elif [ $# == 0 ]
+then
+	create_base_template
+else
+	echo "Invalid number of arguments."
+fi

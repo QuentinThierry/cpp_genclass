@@ -1,0 +1,13 @@
+#ifndef CLASSNAME_HPP
+#define CLASSNAME_HPP
+
+class	ClassName
+{
+	public:
+		ClassName();
+		ClassName(ClassName const & ref);
+		ClassName &operator=(ClassName const &ref);
+		~ClassName();
+};
+
+#endif

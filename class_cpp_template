@@ -1,0 +1,21 @@
+#include "Class.hpp"
+
+ClassName::ClassName()
+{
+
+}
+
+ClassName::ClassName(ClassName const &ref)
+{
+	*this = ref;
+}
+
+ClassName	&ClassName::operator=(ClassName const &ref)
+{
+	return (*this);
+}
+
+ClassName::~ClassName()
+{
+
+}
