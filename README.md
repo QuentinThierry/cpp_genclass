@@ -9,7 +9,7 @@ Simple command example : ```genclass CppClass```
 
 Install
 =======
-```git clone https://github.com/QuentinThierry/cpp_genclass.git && bash cpp_genclass/install.sh && rm -f cpp_genclass/install.sh```
+```git clone https://github.com/QuentinThierry/cpp_genclass.git && bash cpp_genclass/install.sh && rm -rf cpp_genclass/```
 
 Usage
 =====
