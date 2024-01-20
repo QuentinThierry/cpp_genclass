@@ -13,9 +13,8 @@ mv -f -t "$HOME"/.cpp_genclass/ genclass LICENSE class_cpp_template class_hpp_te
 
 echo -e "\n""export PATH=\$PATH:$HOME/.cpp_genclass" >> "$SHELL_RC"
 SHELL_LINE_ADDED=$(cat "$SHELL_RC" | wc -l)
-source $SHELL_RC
 rm -f install.sh
 
 echo "[LOG] - cpp_class generator has been successfully installed"
 echo "[LOG] - PATH env variable has been modified, see $SHELL_RC line $SHELL_LINE_ADDED"
-echo "[LOG] - Try 'genclass --help' to ensure the installation worked"
+echo "[LOG] - Try 'genclass --help' to ensure the installation worked (you might need to restart terminal or 'source' your shell)"
