@@ -52,7 +52,7 @@ if [ $# == 1 ]
 then
 	if [ "$1" == "--help" ]
 	then
-		echo display_help
+		display_help
 	elif [ ${1:0:1} == "-" ]
 	then
 		echo "[GENCLASS] Unknown option $1"
