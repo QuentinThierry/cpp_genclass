@@ -6,8 +6,8 @@ SHELL_RC="$HOME/.$SHELL_NAME"rc
 mkdir "$HOME"/.cpp_genclass
 if [ $? != 0 ]
 then
-	echo "[LOG] - Aborting genclass installation"
-	exit
+	echo "[LOG] - Aborting genclass installation -- fix problems and restart with 'bash install.sh"
+	exit 1
 fi
 mv -f -t "$HOME"/.cpp_genclass/ genclass LICENSE class_cpp_template class_hpp_template main_cpp_template README.md
 
