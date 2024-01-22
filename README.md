@@ -9,8 +9,7 @@ Simple command example : ```genclass CppClass```
 
 Will output :
 
-![image](https://github.com/QuentinThierry/cpp_genclass/assets/38769246/96e945a3-eb86-4e38-adff-6c9d0b2c64d8)
-
+![image](https://github.com/QuentinThierry/cpp_genclass/assets/38769246/07c8290e-0a96-423e-b617-2a7f6d3e6e55)
 
 
 Install
