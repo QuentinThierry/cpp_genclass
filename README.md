@@ -7,6 +7,12 @@ It will generate a \<file\>.hpp and \<file\>.cpp with file being provided by the
 
 Simple command example : ```genclass CppClass```
 
+Will output :
+
+![image](https://github.com/QuentinThierry/cpp_genclass/assets/38769246/96e945a3-eb86-4e38-adff-6c9d0b2c64d8)
+
+
+
 Install
 =======
 ```git clone https://github.com/QuentinThierry/cpp_genclass.git && bash cpp_genclass/install.sh && rm -rf cpp_genclass/```
