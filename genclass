@@ -28,7 +28,7 @@ create_single_class()
 	CLASS_BASE_NAME=$(echo "$CLASS_NO_PATH" | sed 's/\(.*\)\.cpp$/\1/;s/\(.*\)\.hpp$/\1/')
 
 	if ! test -f $CLASS_PATH/$CLASS_BASE_NAME.cpp; then
-		cat $EXEC_PATH/class_cpp_template | sed "s/ClassName/$CLASS_BASE_NAME/g" | sed "s/ClassName/${CLASS_BASE_NAME^^}/g" > $CLASS_PATH/$CLASS_BASE_NAME.cpp
+		cat $EXEC_PATH/class_cpp_template | sed "s/ClassName/$CLASS_BASE_NAME/g" | sed "s/Class.hpp/$CLASS_BASE_NAME.hpp/g" > $CLASS_PATH/$CLASS_BASE_NAME.cpp
 		if [ $? == 0 ]
 		then
 			echo "'$CLASS_PATH/$CLASS_BASE_NAME.cpp' created"
@@ -38,7 +38,7 @@ create_single_class()
 	fi
 
 	if ! test -f $CLASS_PATH/$CLASS_BASE_NAME.hpp; then
-		cat $EXEC_PATH/class_hpp_template | sed "s/ClassName/$CLASS_BASE_NAME/g" | sed "s/ClassName/${CLASS_BASE_NAME^^}/g" > $CLASS_PATH/$CLASS_BASE_NAME.hpp
+		cat $EXEC_PATH/class_hpp_template | sed "s/ClassName/$CLASS_BASE_NAME/g" | sed "s/CLASSNAME/${CLASS_BASE_NAME^^}/g" > $CLASS_PATH/$CLASS_BASE_NAME.hpp
 		if [ $? == 0 ]
 		then
 			echo "'$CLASS_PATH/$CLASS_BASE_NAME.hpp' created"

@@ -1,4 +1,4 @@
-#include "Class.hpp"
+#include "ClassName.hpp"
 
 ClassName::ClassName()
 {
