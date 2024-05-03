@@ -5,7 +5,7 @@ class	ClassName
 {
 	public:
 		ClassName();
-		ClassName(ClassName const & ref);
+		ClassName(ClassName const &ref);
 		ClassName &operator=(ClassName const &ref);
 		~ClassName();
 };
